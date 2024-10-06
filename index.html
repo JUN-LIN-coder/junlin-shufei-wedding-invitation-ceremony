@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="JunLin & ShuFei 婚宴" />
+    <meta property="og:description" content="是電子喜帖啦～" />
+	<meta property="og:image" content="https://jun-lin-coder.github.io/junlin-shufei-wedding-invitation/images/icon-wedding-invitation.png" />
+    <meta property="og:url" content="https://jun-lin-coder.github.io/junlin-shufei-wedding-invitation/" />
+    <meta property="og:type" content="website" />
+    <title>JunLin & ShuFei 婚宴</title>
+    <link rel="icon" href="images/icon-wedding-invitation.png" type="image/png">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+    <!-- 歡迎畫面 -->
+    <div id="welcome-screen">
+        <img src="images/welcome.jpg" alt="Welcome" onclick="closeWelcome()">
+    </div>
+
+    <div id="main-content">
+        <!-- 標題 -->
+        <div id="title">
+            <img src="images/title-content.png" alt="Wedding Title">
+        </div>
+        
+        <!-- 標題圖片 -->
+        <div id="title-image">
+            <img id="title-carousel" src="images/title_01.png" alt="Wedding Title">
+        </div>
+
+        <!-- 各個 section 的按鈕 -->
+        <button class="accordion" onclick="toggleSection('wedding-details')">
+            <img src="images/icon-message.png" alt="小道消息" class="icon"> 小道消息
+        </button>
+        <div class="panel" id="wedding-details" style="display:none;">
+            <p class="align-red-text">
+                <strong style="color: #d9534f;">日期：</strong> 
+                <span style="font-weight: bold; color: #595757;">2024 年 11 月 2 日 ( 六 )</span>
+            </p>
+            <p class="align-red-text">
+                <strong style="color: #d9534f;">時間：</strong> 
+                <span style="font-weight: bold; color: #595757;">上午 11:00</span>
+            </p>
+            <p class="align-red-text">
+                <strong style="color: #d9534f;">地點：</strong> 
+                <span style="font-weight: bold; color: #595757;">幸福莊園 House Wedding</span>
+            </p>
+            <p class="align-red-text">
+                <strong style="color: #d9534f;">地址：</strong> 
+                <span style="font-weight: bold; color: #595757;">台中市大雅區樹德街252號</span>
+            </p>
+        </div>
+        
+        <button class="accordion" onclick="toggleSection('couple-story')">
+            <img src="images/icon-story.png" alt="新人故事" class="icon"> 新人故事
+        </button>
+        <div class="panel" id="couple-story" style="display:none;">
+            <p style="font-style: italic;">我們的故事，從一個美好的邂逅開始...</p>
+            <p style="font-weight: bold;"><a href="#" onclick="showAlert()">[請付費解鎖]</a></p>
+        </div>
+        
+        <button class="accordion" onclick="toggleSection('wedding-photos')">
+            <img src="images/icon-photos.png" alt="婚紗相冊" class="icon"> 婚紗相冊
+        </button>
+        <div class="panel" id="wedding-photos">
+            <div class="gallery-background">
+                <div id="gallery-container" class="gallery"></div>        
+            </div>
+        </div>
+        
+        <button class="accordion" onclick="toggleSection('wedding-photos-vedio')">
+            <img src="images/icon-vedio.png" alt="婚紗影片" class="icon"> 婚紗影片
+        </button>
+        <div class="panel" id="wedding-photos-vedio" style="display:none;">
+            <div class="default-padding">
+                <iframe
+					id="youtube-player"
+					style="margin-top: 10px"
+                    src="https://www.youtube.com/embed/fTqjtScE2LQ?enablejsapi=1"
+                    title="俊霖 ♥ 姝妃 HD（1080p）"
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+        <button class="accordion" onclick="toggleSection('wedding-reminder')">
+            <img src="images/icon-alert.png" alt="婚宴提醒" class="icon"> 婚宴提醒
+        </button>
+        <div class="panel" id="wedding-reminder" style="display:none;">
+            <div class="default-padding">
+                <h2 style="color: #d9534f;margin-top: 10px;margin-bottom: 10px;">🔴紅色炸彈倒數💣</h2>
+                <div id="countdown"></div>
+                <button id="add-to-calendar" style="margin-bottom: 10px;">📅 加入 Google 行事曆</button>
+            </div>
+        </div>
+
+        <button class="accordion" onclick="toggleSection('wedding-location')">
+            <img src="images/icon-map.png" alt="婚宴地圖" class="icon"> 婚宴地圖
+        </button>
+        <div class="panel" id="wedding-location" style="display:none;">
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d116419.84244437577!2d120.51501479726564!3d24.237578700000007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346917270c98aaa9%3A0x6cf66c904b8612d9!2z5bm456aP6I6K5ZySSG91c2UgV2VkZGluZw!5e0!3m2!1szh-TW!2stw!4v1727584513869!5m2!1szh-TW!2stw"
+                    frameborder="0"
+                    allowfullscreen=""
+                    aria-hidden="false"
+                    tabindex="0">
+                </iframe>
+            </div>
+            <p><strong style="color: #d9534f;">幸福莊園 House Wedding</strong></p>
+            <p><strong>地址：</strong> <span style="font-weight: bold;">台中市大雅區樹德街252號</span></p>
+        </div>
+		
+		<button class="accordion" onclick="toggleSection('wedding-parking')">
+			<img src="images/icon-parking.png" alt="停車位置" class="icon"> 停車位置
+		</button>
+		<div class="panel" id="wedding-parking" style="display:none;">
+			<img src="images/parking.png" alt="停車位置">
+			<ul style="text-align: center">
+				<span style="font-weight: bold; color: #595757;">當天會有工作人員指引！</span>
+			</ul>
+        </div>
+		
+		<button class="accordion" onclick="toggleSection('wedding-bus')">
+			<img src="images/icon-bus.png" alt="公車資訊" class="icon"> 公車資訊
+		</button>
+		<div class="panel" id="wedding-bus" style="display:none;">
+			<h3><strong style="color: #d9534f;">高鐵台中站</strong></h3>
+			<ul>
+				<span style="font-weight: bold; color: #595757;">搭156: 高鐵台中站(第17月台) - 頭張(中清路)</span>
+				<br>
+				<span style="color: #757575;">約 20 分</span>
+				<br>
+				<span style="font-weight: bold; color: #595757;">搭525: 頭張(中清路) - 億鴻新村</span>
+				<br>
+				<span style="color: #757575;">約 16 分</span>
+				<br>
+				<span style="font-weight: bold; color: #595757;">步行290公尺 - 幸福莊園</span>
+				<br>
+				<span style="color: #757575;">約 4 分</span>
+			</ul>
+
+			<h3><strong style="color: #d9534f;">臺中火車站</strong></h3>
+			<ul>
+				<span style="font-weight: bold; color: #595757;">搭525: 臺中車站(臺灣大道) - 億鴻新村</span>
+				<br>
+				<span style="color: #757575;">約 53 分</span>
+				<br>
+				<span style="font-weight: bold; color: #595757;">步行290公尺 - 幸福莊園</span>
+				<br>
+				<span style="color: #757575;">約 4 分</span>
+			</ul>
+
+			<h3><strong style="color: #d9534f;">豐原車站</strong></h3>
+			<ul>
+				<span style="font-weight: bold; color: #595757;">搭528: 豐原轉運中心 - 億鴻新村</span>
+				<br>
+				<span style="color: #757575;">約 19 分</span>
+				<br>
+				<span style="font-weight: bold; color: #595757;">步行290公尺 - 幸福莊園</span>
+				<br>
+				<span style="color: #757575;">約 4 分</span>
+			</ul>
+		</div>
+        
+        <button class="accordion" onclick="toggleSection('wedding-client-photos')">
+            <img src="images/icon-client-photos.png" alt="賓客上傳" class="icon"> 賓客上傳
+        </button>
+        <div class="panel" id="wedding-client-photos" style="display:none;">
+            <div class="default-padding">
+                <span style="font-weight: bold; color: #595757;">請為我們拍下美好的時刻</span>
+                <br>
+                <span style="font-weight: bold; color: #595757;">合照也會放這裡喔！</span>
+                <br>
+                <a href="https://drive.google.com/drive/folders/13MMNgGDCdrACqzRqFCtJLjoI16hPU3hp?usp=sharing" target="_blank" style="color: #d9534f; font-weight: bold;">上傳賓客照片/影片</a>
+            </div>
+        </div>
+
+        <div id="lightbox" class="lightbox">
+            <span class="close" onclick="closeLightbox()">&times;</span>
+            <div id="slides-container"></div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    </div>
+	
+	<audio id="background-music" style="display:none;" controls autoplay loop>
+		<source src="sounds/Everything Has a Beginning - Joel Cummins.m4a" type="audio/mp4">
+		您的瀏覽器不支援音樂播放。
+	</audio>
+
+    <script src="js/scripts.js"></script>
+	<script src="https://www.youtube.com/iframe_api"></script>
+</body>
+</html>

@@ -1,0 +1,335 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f9f9f9; /* 背景顏色 */
+    color: #333;
+    margin: 0; /* 移除預設的 margin */
+    padding: 0; /* 移除預設的 padding */
+}
+
+body::before {
+    content: '';
+    position: fixed; /* 固定在視窗 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./../images/wood.jpg'); /* 替換為您的圖片路徑 */
+    background-size: cover; /* 背景圖片覆蓋整個區域 */
+    background-position: center; /* 使背景圖片居中 */
+    background-repeat: no-repeat; /* 不重複背景圖片 */
+    opacity: 0.5; /* 調整這裡的數值以改變透明度，範圍是 0 到 1 */
+    z-index: -1; /* 確保它在其他內容之下 */
+}
+
+h1 {
+    color: #d9534f;
+    margin-top: 20px;
+}
+
+/* Section Styles */
+.section {
+    margin: 20px 0;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: center; /* Center text content */
+}
+
+/* Gallery Styles */
+.gallery-background {
+    height: 400px; /* 设置固定高度，根据需要调整 */
+    overflow-y: auto; /* 超出部分使用垂直滚动条 */
+    padding: 10px; /* 可选：内边距 */
+    border: 1px solid #ccc; /* 可选：边框样式 */
+    border-radius: 10px; /* 可选：圆角效果 */
+    background-color: #f7f2eb; /* 可选：背景颜色 */
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.gallery img {
+    width: 200px; /* 图片宽度 */
+    height: 150px; /* 图片高度 */
+    object-fit: cover; /* 确保图片不失真 */
+    cursor: pointer; /* 鼠标指针效果 */
+    border-radius: 10px; /* 圆角效果 */
+    transition: transform 0.3s ease; /* 动画效果 */
+}
+
+.gallery img:hover {
+    transform: scale(1.05); /* 鼠标悬停时放大效果 */
+}
+
+/* Menu Item Styles */
+.menu-item {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu-item li {
+    padding: 5px 0;
+}
+
+/* Lightbox Styles */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999; /* 確保 Lightbox 在最上層 */
+}
+
+.lightbox img {
+    max-width: 90%; /* 限制圖片的最大寬度為螢幕的 90% */
+    max-height: 90%; /* 限制圖片的最大高度為螢幕的 90% */
+    object-fit: contain; /* 保持圖片的原始比例 */
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Wedding Reminder Styles */
+#wedding-reminder {
+    text-align: center; /* 置中對齊 */
+    margin: 20px 0;
+}
+
+#countdown {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#add-to-calendar {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #8E5038; /* 綠色背景 */
+    color: white; /* 白色文字 */
+    border: none; /* 無邊框 */
+    border-radius: 5px; /* 圓角 */
+    transition: background-color 0.3s; /* 動畫效果 */
+}
+
+#add-to-calendar:hover {
+    background-color: #D06C46; /* 懸停顏色變化 */
+}
+
+/* Accordion Styles */
+.accordion {
+    background-color: #8E5038; /* 按鈕背景顏色 */
+    color: white; /* 文字顏色 */
+    cursor: pointer; /* 滑鼠指標 */
+    padding: 15px 20px; /* 調整內邊距，讓內容有更好的間距 */
+    width: 100%; /* 寬度 */
+    border: none; /* 無邊框 */
+    text-align: center; /* 文字和圖標置中對齊 */
+    outline: none; /* 無輪廓 */
+    font-size: 16px; /* 字體大小 */
+    transition: background-color 0.3s ease; /* 背景顏色過渡效果 */
+    border-radius: 20px; /* 圓角 */
+    margin: 5px 0; /* 外邊距 */
+    display: flex; /* 使用 Flexbox */
+    align-items: center; /* 垂直居中 */
+    justify-content: center; /* 水平居中 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 增加陰影效果 */
+    letter-spacing: 4px; /* 調整字母之間的距離，根據需求調整 */
+}
+
+.accordion.active, .accordion:hover {
+    background-color: #D06C46; /* 懸停時的背景顏色 */
+}
+
+/* Icons Styles */
+.icon {
+	width: 20px;
+	height: 20px;
+	margin-right: 8px;"	
+}
+
+.panel {
+    padding: 0 15px; /* 內邊距 */
+    display: none; /* 初始隱藏 */
+    overflow: hidden; /* 隱藏溢出內容 */
+    background-color: #f7f2eb; /* 背景顏色 */
+    margin-bottom: 5px; /* 下邊距 */
+	border-radius: 15px; /* 圓角 */
+	line-height: 1.6;
+}
+
+.panel img {
+	padding-top: 20px;
+	max-width: 100%; /* 圖片最大寬度為容器的100% */
+	height: auto;    /* 保持圖片比例 */
+	display: block;  /* 避免圖片下方留有空隙 */
+	margin: 0 auto;  /* 圖片置中 */
+}
+
+.panel h3 {
+	margin-bottom: 0;
+	border-bottom: 1px solid #dcdcdc; /* 添加一條灰色的直線 */
+	padding-bottom: 0; /* 給標題下方留些空間 */
+}
+
+.panel ul {
+	padding-left: 5px;
+	text-align: left
+}
+
+/* Welcome Screen Styles */
+#welcome-screen {
+    display: flex; /* 使用彈性盒模型 */
+    position: fixed; /* 固定位置 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* 半透明背景 */
+    z-index: 1000; /* 在其他內容上面 */
+    justify-content: center; /* 置中 */
+    align-items: center; /* 置中 */
+	transition: opacity 2s ease; /* 添加淡出過渡效果 */
+}
+
+#welcome-screen img {
+    max-width: 80%; /* 最大寬度 */
+    max-height: 80%; /* 最大高度 */
+    height: auto; /* 自動調整高度 */
+    cursor: pointer; /* 鼠標樣式 */
+}
+
+#welcome-screen.fade-out {
+	opacity: 0;
+}
+
+#welcome-screen.hidden {
+	display: none;
+}
+
+/* Title Styles */
+
+#title {
+    text-align: center; /* 置中 */
+    margin: 20px 0; /* 上下邊距 */
+}
+
+#title img {
+    max-width: 100%; /* 限制圖片最大寬度 */
+    height: auto; /* 自動調整高度 */
+}
+
+#title-image {
+    text-align: center; /* 置中 */
+    margin: 20px 0; /* 上下邊距 */
+}
+
+#title-image img {
+    max-width: 100%; /* 限制圖片最大寬度 */
+    height: auto; /* 自動調整高度 */
+}
+
+/* Main Content Styles */
+#main-content {
+    padding: 20px; /* 內邊距 */
+}
+
+/* Hidden Content Styles */
+.hidden {
+    display: none; /* 隱藏內容 */
+	pointer-events: none; /* 禁止點擊 */
+}
+
+.align-red-text {
+	display: flex;
+	align-items: center; /* 垂直置中 */
+}
+.align-red-text strong {
+	margin-right: 10px; /* 右側距離 */
+}
+
+/* 讓容器保持影片的比例 */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio (9 / 16 = 0.5625) */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background-color: #000; /* 背景為黑色，若影片未載入顯示此背景 */
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* CSS 媒體查詢 */
+@media (max-width: 768px) {
+	.map-container {
+		height: 300px;
+	}
+}
+.map-container {
+	width: 100%;
+	height: 0;
+	padding-bottom: 56.25%;
+	overflow: hidden;
+	position: relative;
+	border-radius: 10px;
+}
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+	border-radius: 10px;
+    margin-top: 5%; 
+}
+
+.default-padding {
+	width: 100%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	overflow: hidden;
+	position: relative;
+	border-radius: 10px;
+}
